@@ -1,51 +1,25 @@
-// C++ program to count total
-// number of words in the string
-#include <bits/stdc++.h>
+#include <iostream>
+
 using namespace std;
- 
-// Function to count total number
-// of words in the string
-int countWords(string str)
-{
-  // Check if the string is null
-  // or empty then return zero
-  if (str.size() == 0) {
+
+int main(){
+    
+    float f;
+    
+    cin >> f;
+    
+    if(f < 0.0000)
+         cout << "Fora de intervalo\n";
+    else if(f >= 0.0000 && f <= 25.0000)
+         cout << "Intervalo [0,25]\n";
+    else if(f > 25.0000 && f <=50.0000)
+         cout << "Intervalo (25,50]\n";
+    else if(f > 50.0000 && f <=75.0000)
+         cout << "Intervalo (50,75]\n";
+    else if(f > 75.0000 && f <=100.0000)
+         cout << "Intervalo (75,100]\n";
+    else if(f > 100.0000)
+         cout << "Fora de intervalo\n";
+         
     return 0;
-  }
-  // Splitting the string around
-  // matches of the given regular
-  // expression
-  vector<string> words;
-  string temp = "";
-  for (int i = 0; i < str.size(); i++) {
-    if (str[i] == ' ') {
-      words.push_back(temp);
-      temp = "";
-    }
-    else {
-      temp += str[i];
-    }
-  }
- 
-  int count = 1;
- 
-  for (int i = 0; i < words.size(); i++) {
-    if (words[i].size() != 0)
-      count++;
-  }
- 
-  // Return number of words
-  // in the given string
-  return count;
 }
- 
-int main()
-{
- 
-  // Given String str
-  string str = "One two       three\n four\tfive ";
-  // Print the result
-  cout << "No of words : " << countWords(str);
-  return 0;
-}
- 
